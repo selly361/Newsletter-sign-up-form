@@ -19,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
     display: grid;
     place-items: center;
+    background-color: hsl(234, 29%, 20%);
   }
 
 
