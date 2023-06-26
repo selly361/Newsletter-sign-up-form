@@ -1,13 +1,15 @@
-import { createContext, useEffect, useState } from 'react'
-import { isEmailValid } from "utils/isEmailValid";
 import { AppContextProps, IProps } from "./types"
+import { createContext, useEffect, useState } from 'react'
+
+import { isEmailValid } from "utils/isEmailValid";
 
 export const AppContext = createContext<AppContextProps>({
     handleInputChange: (e) => {},
     handleSubmit: () => {},
     touched: false,
     modalOpen: false,
-    isNotValid: false
+    isNotValid: false,
+    email: ""
 })
 
 function AppContextProvider({ children }: IProps) {
@@ -36,7 +38,7 @@ function AppContextProvider({ children }: IProps) {
 
 
    return (
-      <AppContext.Provider value={{ handleInputChange, handleSubmit, touched, modalOpen, isNotValid }}>
+      <AppContext.Provider value={{ handleInputChange, handleSubmit, touched, modalOpen, isNotValid, email }}>
          {children}
       </AppContext.Provider>
    )
