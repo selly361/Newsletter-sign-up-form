@@ -8,15 +8,11 @@ import {
 } from "./Form.styles";
 
 import { isEmailValid } from "utils/isEmailValid";
+import { useAppContext } from "hooks/useAppContext";
 import { useState } from "react";
 
-
-
 function Form() {
-  const [email, setEmail] = useState("");
-  const [touched, setTouched] = useState(false)
-
-  const isNotValid = touched && !isEmailValid(email);
+  const { handleInputChange, handleSubmit, email, isNotValid } = useAppContext()
 
   return (
     <StyledForm onSubmit={(e) => e.preventDefault()}>
@@ -30,12 +26,9 @@ function Form() {
         placeholder="email@company.com"
         id="email"
         value={email}
-        onChange={(e) => {
-          setEmail(e.target.value)
-          setTouched(true)
-        }}
+        onChange={handleInputChange}
       />
-      <StyledButton>Subscribe to monthly newsletter</StyledButton>
+      <StyledButton onClick={handleSubmit}>Subscribe to monthly newsletter</StyledButton>
     </StyledForm>
   );
 }
