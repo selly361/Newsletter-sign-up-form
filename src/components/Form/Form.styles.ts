@@ -6,6 +6,12 @@ export const StyledForm = styled.form`
   gap: 15px;
   flex-direction: column;
   align-items: start;
+
+  @media (max-width: 375px) {
+    & {
+      align-items: center;
+    }
+  }
 `;
 
 export const StyledLabel = styled.label`
@@ -33,6 +39,13 @@ export const StyledInput = styled.input`
     border: 1px solid #ff6155;
     background: rgba(255, 97, 85, 0.15);
   }
+
+  @media (max-width: 375px) {
+    & {
+      width: 327px;
+      height: 56px;
+    }
+  }
 `;
 
 export const StyledButton = styled.button`
@@ -53,6 +66,13 @@ export const StyledButton = styled.button`
   &:active {
     transform: scale(0.96);
   }
+
+  @media (max-width: 375px) {
+    & {
+      width: 327px;
+      height: 56px;
+    }
+  }
 `;
 
 export const Container = styled.div`
@@ -60,4 +80,10 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 376px;
+
+  @media (max-width: 375px) {
+    & {
+      width: 327px;
+    }
+  }
 `;
